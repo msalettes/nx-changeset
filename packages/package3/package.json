@@ -1,8 +1,11 @@
 {
   "name": "@changeset/package3",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "MIT",
   "scripts": {},
   "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {},
+  "publishConfig": {
+    "registry": "https://npm.fury.io/masa/"
+  }
 }
