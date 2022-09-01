@@ -14,7 +14,13 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@changeset/application": ["packages/application/src/index.ts"],
+      "@changeset/package1": ["packages/package1/src/index.ts"],
+      "@changeset/package2": ["packages/package2/src/index.ts"],
+      "@changeset/package3": ["packages/package3/src/index.ts"],
+      "@changeset/package4": ["packages/package4/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

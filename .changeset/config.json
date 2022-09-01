@@ -1,0 +1,11 @@
+{
+  "$schema": "https://unpkg.com/@changesets/config@2.1.1/schema.json",
+  "changelog": ["@changesets/changelog-github", { "repo": "msalettes/nx-changeset" }],
+  "commit": false,
+  "fixed": [["package2", "package3"]],
+  "linked": [],
+  "access": "restricted",
+  "baseBranch": "main",
+  "updateInternalDependencies": "patch",
+  "ignore": ["application"]
+}

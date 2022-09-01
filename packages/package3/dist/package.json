@@ -1,0 +1,15 @@
+{
+  "name": "@changeset/package3",
+  "version": "0.0.2",
+  "license": "MIT",
+  "scripts": {},
+  "dependencies": {},
+  "devDependencies": {},
+  "main": "./src/index.js",
+  "typings": "./src/index.d.ts",
+  "peerDependencies": {
+    "@changeset/package1": "0.0.1",
+    "@changeset/package2": "0.0.1",
+    "tslib": "^2.3.0"
+  }
+}
