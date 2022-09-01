@@ -1,6 +1,6 @@
 {
   "name": "@changeset/package3",
-  "version": "1.0.0",
+  "version": "0.0.0-test-snapshot-20220901230911",
   "license": "MIT",
   "author": "Masa",
   "main": "dist/src/index.js",
@@ -13,7 +13,7 @@
   ],
   "scripts": {},
   "dependencies": {
-    "@changeset/package2": "1.0.0"
+    "@changeset/package2": "0.0.0-test-snapshot-20220901230911"
   },
   "devDependencies": {},
   "publishConfig": {

@@ -1,5 +1,7 @@
 # @changeset/package2
 
+## 0.0.0-test-snapshot-20220901230911
+
 ## 1.0.0
 
 ### Major Changes
