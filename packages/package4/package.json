@@ -9,5 +9,8 @@
     "CHANGELOG.md",
     "README.md",
     "package.json"
-  ]
+  ],
+  "publishConfig": {
+    "registry": "https://npm.fury.io/masa/"
+  }
 }

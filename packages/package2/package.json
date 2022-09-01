@@ -13,5 +13,8 @@
   ],
   "scripts": {},
   "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {},
+  "publishConfig": {
+    "registry": "https://npm.fury.io/masa/"
+  }
 }
