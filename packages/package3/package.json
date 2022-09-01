@@ -12,7 +12,9 @@
     "package.json"
   ],
   "scripts": {},
-  "dependencies": {},
+  "dependencies": {
+    "@changeset/package2": "0.1.0"
+  },
   "devDependencies": {},
   "publishConfig": {
     "registry": "https://npm.fury.io/masa/"
