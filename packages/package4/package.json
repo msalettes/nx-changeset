@@ -1,7 +1,5 @@
 {
   "name": "@changeset/package4",
   "version": "0.0.3",
-  "publishConfig": {
-    "registry": "https://npm.fury.io/masa/"
-  }
+  "author": "Masa"
 }

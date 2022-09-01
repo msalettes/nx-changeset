@@ -2,6 +2,7 @@
   "name": "@changeset/package2",
   "version": "0.0.1",
   "license": "MIT",
+  "author": "Masa",
   "scripts": {},
   "dependencies": {},
   "devDependencies": {}
