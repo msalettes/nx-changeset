@@ -1,5 +1,16 @@
 # @changeset/package3
 
+## 1.1.0
+
+### Minor Changes
+
+- [`50ac169`](https://github.com/msalettes/nx-changeset/commit/50ac169a48c371f12d7744a069be0b836180c5d8) Thanks [@msalettes](https://github.com/msalettes)! - try minor with github pr
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @changeset/package2@1.1.0
+
 ## 1.0.0
 
 ### Major Changes
