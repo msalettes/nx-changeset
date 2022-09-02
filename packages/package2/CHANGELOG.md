@@ -1,5 +1,11 @@
 # @changeset/package2
 
+## 1.2.0
+
+### Minor Changes
+
+- [`28d6fac`](https://github.com/msalettes/nx-changeset/commit/28d6face8f0f8d41dfb6b8cf977f767f81df823f) Thanks [@msalettes](https://github.com/msalettes)! - package2 minor version
+
 ## 1.1.0
 
 ## 1.0.0

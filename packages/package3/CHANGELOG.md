@@ -1,5 +1,12 @@
 # @changeset/package3
 
+## 1.2.0
+
+### Patch Changes
+
+- Updated dependencies [[`28d6fac`](https://github.com/msalettes/nx-changeset/commit/28d6face8f0f8d41dfb6b8cf977f767f81df823f)]:
+  - @changeset/package2@1.2.0
+
 ## 1.1.0
 
 ### Minor Changes
