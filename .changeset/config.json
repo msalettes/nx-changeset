@@ -6,5 +6,6 @@
   "linked": [],
   "access": "restricted",
   "baseBranch": "main",
-  "updateInternalDependencies": "patch"
+  "updateInternalDependencies": "patch",
+  "ignore": ["@changeset/package1", "@changeset/application"]
 }
