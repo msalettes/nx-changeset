@@ -1,10 +1,10 @@
 {
   "name": "@changeset/application",
   "version": "0.0.1",
-  "private":true,
+  "private": true,
   "dependencies": {
-    "@changeset/package2": "1.2.0",
-    "@changeset/package3": "1.2.0"
+    "@changeset/package2": "2.0.0",
+    "@changeset/package3": "2.0.0"
   },
   "devDependencies": {}
 }

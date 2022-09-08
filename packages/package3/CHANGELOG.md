@@ -1,5 +1,16 @@
 # @changeset/package3
 
+## 2.0.0
+
+### Major Changes
+
+- [`71921ba`](https://github.com/msalettes/nx-changeset/commit/71921ba1588743c38c4910f6f02518135cbae934) Thanks [@msalettes](https://github.com/msalettes)! - big major on package3
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @changeset/package2@2.0.0
+
 ## 1.2.0
 
 ### Patch Changes

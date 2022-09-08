@@ -1,5 +1,7 @@
 # @changeset/package2
 
+## 2.0.0
+
 ## 1.2.0
 
 ### Minor Changes
