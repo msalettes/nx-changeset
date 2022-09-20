@@ -1,5 +1,19 @@
 # @changeset/package3
 
+## 2.1.0
+
+### Minor Changes
+
+- [`dff1891`](https://github.com/msalettes/nx-changeset/commit/dff18916223aa0c5a831bcf6ba0c214473aefd55) Thanks [@msalettes](https://github.com/msalettes)! - [MASA-102] fwoihf wfeiwoh fwpf p[fjpwg phfwf0wpwhfwfhwpfw
+
+### Patch Changes
+
+- [`de5f38b`](https://github.com/msalettes/nx-changeset/commit/de5f38b481e6cd3d9e5fa5b10d35ad8094cec75c) Thanks [@msalettes](https://github.com/msalettes)! - [MASA-101] nfiwhoibkjbgkejbrggkjbegkjergegegegbkegb
+  [MASA-101] qqecfwegfwfhgwcfwfwfowghfeowifhwf wfwe fwef w
+  [MASA-101] aaaafibwrguhgiuhgowi hiofh woeifh wfoihwf owihf
+- Updated dependencies []:
+  - @changeset/package2@2.1.0
+
 ## 2.0.0
 
 ### Major Changes
