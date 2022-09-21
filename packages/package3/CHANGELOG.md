@@ -1,5 +1,16 @@
 # @changeset/package3
 
+## 2.2.0
+
+### Minor Changes
+
+- [`c8f6519`](https://github.com/msalettes/nx-changeset/commit/c8f6519c595474d22ebced63152c7571e687cd65) Thanks [@msalettes](https://github.com/msalettes)! - [MASA-201] woihf wfwjpefhwf wohf wphifewfhi owfoh iwfpwhofewefwf
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @changeset/package2@2.2.0
+
 ## 2.1.0
 
 ### Minor Changes

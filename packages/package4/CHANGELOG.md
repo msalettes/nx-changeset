@@ -1,5 +1,14 @@
 # @changeset/package4
 
+## 1.2.0
+
+### Minor Changes
+
+- [`64be3ed`](https://github.com/msalettes/nx-changeset/commit/64be3ed8efe73d9f39edc575c76057cf993760ed) Thanks [@msalettes](https://github.com/msalettes)! - [ANA-101] goehgeogh oghe gohei owhg oewgh eoghi legoehgeowhgi ewg hoegheogegohegeogh eg heg oheo hgr egiehg
+  lrehglh rge;oghew go hlewg ;lhgeg hewpg hlewg;heg e
+  goehg elgh egolihew goeiwhg oeihg eoigrhle gihegiohege
+  gwoegh eowgih eogihe g oiehg roiehg oewigh eoigrh eoigh ewoghi ewgh
+
 ## 1.1.0
 
 ### Minor Changes

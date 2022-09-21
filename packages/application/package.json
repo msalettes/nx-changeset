@@ -3,8 +3,8 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
-    "@changeset/package2": "2.1.0",
-    "@changeset/package3": "2.1.0"
+    "@changeset/package2": "2.2.0",
+    "@changeset/package3": "2.2.0"
   },
   "devDependencies": {}
 }
