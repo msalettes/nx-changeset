@@ -1,5 +1,17 @@
 # @changeset/package4
 
+## 1.3.0
+
+### Minor Changes
+
+- [`41d03df`](https://github.com/msalettes/nx-changeset/commit/41d03df486b818a527b77c6278db2de630c9530c) Thanks [@msalettes](https://github.com/msalettes)! - [ANA-349] wofhwefoihw fiowhf woifh wofih wfoih f:
+
+  - geroigehgroe igeiog er
+  - orhgeoigh eiogrh eogihego
+  - goerhrgoreihrg eoighe goriheg
+
+- [`88a64b5`](https://github.com/msalettes/nx-changeset/commit/88a64b545830e6f094b02e1180e3b15ef679ca0a) Thanks [@msalettes](https://github.com/msalettes)! - [ANA-574] fo3ghorgihe goiehrgoegheo giehgeogiheg oieghr egheio
+
 ## 1.2.0
 
 ### Minor Changes
