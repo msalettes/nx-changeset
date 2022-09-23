@@ -37,7 +37,7 @@ jobs:
       - name: if package4 exists
         if: ${{ steps.isFileExist.outputs.package4Exists == 'true' }}
         run: |
-          echo "package4Exists: ${{ steps.isFileExist.outputs.package4Exists == 'true' && toto }}";
+          echo "package4Exists: ${{ steps.isFileExist.outputs.package4Exists == 'true' && 'toto' }}";
 
       - name: if package5 exists
         if: ${{ steps.isFileExist.outputs.package5Exists == 'true' }}
