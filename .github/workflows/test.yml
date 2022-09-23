@@ -26,8 +26,8 @@ jobs:
       - name: Test file
         id: isFileExist
         run: |
-          echo "::set-output name=package4Exists::$(test -f './packages/package4/package.json')";
-          echo "::set-output name=package5Exists::$(test -f './packages/package5/package.json')";
+          echo "::set-output name=package4Exists::$(test -f './packages/package4/package.json' && echo 'true' || echo  'false')";
+          echo "::set-output name=package5Exists::$(test -f './packages/package5/package.json' && echo 'true' || echo  'false')";
 
       - name: show if file exists
         run: |
