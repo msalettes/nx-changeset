@@ -1,4 +1,4 @@
-name: Release
+name: test
 
 on:
   pull_request:
@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  release:
+  test:
     name: Test
     runs-on: ubuntu-latest
     steps:
