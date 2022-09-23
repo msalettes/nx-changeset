@@ -14,6 +14,11 @@ jobs:
     name: Test
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout Rep
+        uses: actions/checkout@v3
+        with:
+          ref: ${GITHUB_REF##*/}
+
       - name: Get branch name
         run: |
             echo "GITHUB_REF: ${GITHUB_REF##*/}";
