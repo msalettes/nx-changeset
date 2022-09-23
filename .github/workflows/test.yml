@@ -31,15 +31,15 @@ jobs:
       - name: Test file
         id: isFileExist
         run: |
-          echo "::set-output name=package4Exists::$(test -f './packages/package4/package.json')";
-          echo "::set-output name=package5Exists::$(test -f './packages/package5/package.json')";
+          echo "::set-output name=package4Exists::$(test -f './packages/package4/package.json' && echo 'true' || echo  'false')";
+          echo "::set-output name=package5Exists::$(test -f './packages/package5/package.json '&& echo 'true' || echo  'false')";
 
       - name: if package4 exists
-        if: ${{ steps.isFileExist.outputs.package4Exists }}
+        if: ${{ steps.isFileExist.outputs.package4Exists == 'true' }}
         run: |
           echo "package4Exists";
 
       - name: if package5 exists
-        if: ${{ steps.isFileExist.outputs.package5Exists }}
+        if: ${{ steps.isFileExist.outputs.package5Exists == 'true' }}
         run: |
           echo "package5Exists";
