@@ -26,10 +26,15 @@ jobs:
       - name: Test file
         id: isFileExist
         run: |
-          echo "::set-output name=package4Exists::$(test -f './packages/package4/package.json' && echo 'true' || echo  'false')";
-          echo "::set-output name=package5Exists::$(test -f './packages/package5/package.json' && echo 'true' || echo  'false')";
+          echo "::set-output name=package4Exists::$(test -f './packages/package4/package.json')";
+          echo "::set-output name=package5Exists::$(test -f './packages/package5/package.json')";
 
-      - name: show if file exists
+      - name: if package4 exists
+        if: ${{ steps.isFileExist.outputs.package4Exists }}
         run: |
-          echo "package4Exists: ${{ steps.isFileExist.outputs.package4Exists }}";
-          echo "package5Exists: ${{ steps.isFileExist.outputs.package5Exists }}";
+          echo "package4Exists";
+
+      - name: if package5 exists
+        if: ${{ steps.isFileExist.outputs.package5Exists }}
+        run: |
+          echo "package5Exists";
