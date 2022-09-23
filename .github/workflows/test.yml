@@ -14,11 +14,6 @@ jobs:
     name: Test
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Rep
-        uses: actions/checkout@v3
-        with:
-          ref: ${GITHUB_REF##*/}
-
       - name: Get branch name
         run: |
             echo "GITHUB_REF: ${GITHUB_REF##*/}";
@@ -27,6 +22,11 @@ jobs:
             echo "github.event.pull_request.head.sha: ${{ github.event.pull_request.head.sha }}";
             echo "github.ref: ${{ github.ref }}";
             echo "github.sha: ${{ github.sha }}";
+
+      - name: Checkout Rep
+        uses: actions/checkout@v3
+        with:
+          ref: ${GITHUB_REF##*/}
 
       - name: Test file
         id: isFileExist
