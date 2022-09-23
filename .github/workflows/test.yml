@@ -1,0 +1,23 @@
+name: Release
+
+on:
+  pull_request:
+    branches:
+      - "**"
+  push:
+    branches:
+      - "**"
+
+jobs:
+  release:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get branch name
+        run: |
+            echo "GITHUB_REF: ${GITHUB_REF##*/}";
+            echo "github.event.workflow_run.head_sha: ${{ github.event.workflow_run.head_sha }}";
+            echo "github.event.workflow_run.head_ref: ${{ github.event.workflow_run.head_ref }}";
+            echo "github.event.pull_request.head.sha: ${{ github.event.pull_request.head.sha }}";
+            echo "github.ref: ${{ github.ref }}";
+            echo "github.sha: ${{ github.sha }}";
