@@ -26,7 +26,7 @@ jobs:
       - name: Checkout Rep
         uses: actions/checkout@v3
         with:
-          ref: ${GITHUB_REF##*/}
+          ref: ${{ github.sha }}
 
       - name: Test file
         id: isFileExist
