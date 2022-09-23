@@ -22,3 +22,14 @@ jobs:
             echo "github.event.pull_request.head.sha: ${{ github.event.pull_request.head.sha }}";
             echo "github.ref: ${{ github.ref }}";
             echo "github.sha: ${{ github.sha }}";
+
+      - name: Test file
+        id: isFileExist
+        run: |
+          echo "::set-output name=package4Exists::$(test -f './packages/package4/package.json')";
+          echo "::set-output name=package5Exists::$(test -f './packages/package5/package.json')";
+
+      - name: show if file exists
+        run: |
+          echo "package4Exists: ${{ steps.isFileExist.outputs.package4Exists }}";
+          echo "package5Exists: ${{ steps.isFileExist.outputs.package5Exists }}";
