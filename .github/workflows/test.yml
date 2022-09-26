@@ -21,6 +21,7 @@ jobs:
             echo "github.event.workflow_run.head_ref: ${{ github.event.workflow_run.head_ref }}";
             echo "github.event.pull_request.head.sha: ${{ github.event.pull_request.head.sha }}";
             echo "github.ref: ${{ github.ref }}";
+            echo "github.ref_name: ${{ github.ref_name }}";
             echo "github.sha: ${{ github.sha }}";
 
       - name: Checkout Rep
