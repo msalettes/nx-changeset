@@ -1,7 +1,12 @@
 {
   "$schema": "https://unpkg.com/@changesets/config@2.1.1/schema.json",
   "changelog": ["@changesets/changelog-github", { "repo": "msalettes/nx-changeset" }],
-  "commit": ["@changesets/cli/commit", { "skipCI": "add" }],
+  "commit": [
+    "./commit.js",
+    {
+      "skipCI": "version"
+    }
+  ],
   "fixed": [["@changeset/package2", "@changeset/package3"]],
   "linked": [],
   "access": "restricted",
