@@ -44,3 +44,27 @@ jobs:
         if: ${{ steps.isFileExist.outputs.package5Exists == 'true' }}
         run: |
           echo "package5Exists";
+
+      - name: Setup NodeJS
+        uses: actions/setup-node@v1
+        with:
+          node-version: "14.18.1"
+
+      - uses: actions/cache@v2
+        id: yarn-cache
+        with:
+          path: "**/node_modules"
+          key: ${{ runner.os }}-node-modules-cache-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - name: Install
+        if: ${{ steps.yarn-cache.outputs.cache-hit != 'true' }}
+        run: yarn install --frozen-lockfile
+
+      - name: Create or update release Pull Request by package which has changesets
+        id: pr-release
+        run: node release-scripts/release-pr-step.mjs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BASE_BRANCH: ${GITHUB_REF##*/}
