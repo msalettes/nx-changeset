@@ -23,7 +23,7 @@ const getPackagesWithChangesets = () => {
   const result = shelljs.exec('yarn changeset status');
 
   if (result.code === 0) {
-    const matches = result.stdout.match(/(@mirakl\/[\w-]+)/g);
+    const matches = result.stdout.match(/(@changeset\/[\w-]+)/g);
 
     return matches !== null ? matches : [];
   }
