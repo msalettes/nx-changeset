@@ -74,6 +74,7 @@ async function changesetVersion(packageName) {
 }
 
 async function createVersion({ context, octokit, packageName, baseBranch }) {
+  console.log("DEBUG ~ file: release-pr.mjs ~ line 77 ~ createVersion ~ baseBranch", baseBranch)
   const repositoryPathname = `${context.repo.owner}/${context.repo.repo}`;
 
   const packageShortName = getPackageShortName(packageName);
