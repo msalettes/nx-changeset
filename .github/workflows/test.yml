@@ -68,4 +68,4 @@ jobs:
         run: node release-scripts/release-pr-step.mjs
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BASE_BRANCH: ${GITHUB_REF##*/}
+          BASE_BRANCH: ${{ github.ref_name }}
