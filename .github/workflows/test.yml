@@ -25,8 +25,9 @@ jobs:
 
       - name: Checkout Rep
         uses: actions/checkout@v3
-        with:
-          ref: ${{ github.sha }}
+
+      - name: Get current branch name
+        run: git branch --show-current
 
       - name: Test file
         id: isFileExist
