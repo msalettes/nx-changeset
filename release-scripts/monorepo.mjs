@@ -5,7 +5,7 @@ export const ROMA_PACKAGE_NAME = '@mirakl/roma';
 export const ROMA_DS_PACKAGE_NAME = '@mirakl/roma-design-system';
 export const ROMA_DOC_PACKAGE_NAME = '@mirakl/roma-documentation';
 
-export const NPM_SCOPE = '@mirakl';
+export const NPM_SCOPE = '@changeset';
 /**
  * Return a array of string corresponding to the list of package name
  */
