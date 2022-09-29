@@ -17,7 +17,7 @@ on:
         - package4
         required: true
 
-concurrency: ${{ github.run_id }}-${{ github.ref }}
+concurrency: ${{ github.workflow }}-${{ github.ref }}-release-package
 
 jobs:
   # Run only if the latest commit is related to a release > release(package): new version X.XX.XX
