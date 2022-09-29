@@ -17,7 +17,7 @@ on:
         - package4
         required: true
 
-concurrency: ${{ github.run_id }}-${{ github.ref }}
+concurrency: ${{ github.workflow }}-${{ github.ref }}-release-package
 
 jobs:
   # Run only if the latest commit is related to a release > release(package): new version X.XX.XX
@@ -38,12 +38,12 @@ jobs:
       - name: get package major version
         id: packageMajorVersion
         run: |
-          echo "::set-output name=packageMajorVersion::$(echo '${{ steps.packageVersion.outputs.value }}' | sed 's/\([0-9]*\).*/\1/')";
+          echo "::set-output name=value::$(echo '${{ steps.packageVersion.outputs.value }}' | sed 's/\([0-9]*\).*/\1/')";
 
       - name: display package info
         run: |
           echo "Branch name: ${{ github.ref_name }}"
           echo "Package name: ${{ inputs.packageName }}"
           echo "Package version: ${{ steps.packageVersion.outputs.value }}"
-          echo "Package major version: ${{ steps.packageInfo.outputs.packageMajorVersion }}"
+          echo "Package major version: ${{ steps.packageMajorVersion.outputs.value }}"
 
