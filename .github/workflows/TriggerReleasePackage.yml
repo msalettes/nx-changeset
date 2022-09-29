@@ -1,0 +1,43 @@
+name: TriggerReleasePackage
+
+on:
+  push:
+    branches:
+      - main
+      - chore-test-wfs
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+jobs:
+  # Run only if the latest commit is related to a release > release(package): new version X.XX.XX
+  GetPackageName:
+    name: Get the name of the package to release
+    runs-on: ubuntu-latest
+    if: startsWith(github.event.head_commit.message, 'release(')
+    outputs:
+      packageName: ${{ steps.packageName.outputs.value }}
+    steps:
+      - name: get package name
+        id: packageName
+        run: |
+          echo "::set-output name=value::$(echo '${{ github.event.head_commit.message }}' | sed 's/release(\([^()]*\)).*/\1/')";
+
+
+  ShowPackageName:
+    name: Show package name
+    runs-on: ubuntu-latest
+    needs: GetPackageName
+    steps:
+      - name: Show package name
+        run: |
+          echo "Package name:${{ needs.GetPackageName.outputs.packageName }}!"
+
+  # Run only if the latest commit is related to a release > release(package): new version X.XX.XX
+  # LaunchPackageRelease:
+  #   name: Launch the package release
+  #   runs-on: ubuntu-latest
+  #   needs: GetPackageName
+  #   if: startsWith(github.event.head_commit.message, 'release(')
+  #   uses: msalettes/nx-changeset/.github/workflows/ReleasePackage.yml@chore-test-wfs
+  #   with:
+  #     target: ${{ needs.GetPackageName.outputs.packageName }}

@@ -1,0 +1,49 @@
+name: ReleasePackage
+
+on:
+  workflow_call:
+    inputs:
+      packageName:
+        required: true
+        type: string
+
+  workflow_dispatch:
+    inputs:
+      packageName:
+        type: choice
+        description: Select the package
+        options:
+        - package3
+        - package4
+        required: true
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+jobs:
+  # Run only if the latest commit is related to a release > release(package): new version X.XX.XX
+  ReleasePackage:
+    name: Release package
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout Rep
+        uses: actions/checkout@v3
+
+      - name: get package version
+        uses: sergeysova/jq-action@v2
+        id: packageVersion
+        with:
+          cmd: 'jq .version packages/${{ inputs.packageName }}/package.json -r'
+
+      - name: get package major version
+        id: packageMajorVersion
+        run: |
+          echo "::set-output name=packageMajorVersion::$(echo '${{ steps.packageVersion.outputs.value }}' | sed 's/\([0-9]*\).*/\1/')";
+
+      - name: display package info
+        run: |
+          echo "Branch name: ${{ github.ref_name }}"
+          echo "Package name: ${{ inputs.packageName }}"
+          echo "Package version: ${{ steps.packageVersion.outputs.value }}"
+          echo "Package major version: ${{ steps.packageInfo.outputs.packageMajorVersion }}"
+
