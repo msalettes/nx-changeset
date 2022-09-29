@@ -1,5 +1,11 @@
 # @changeset/package4
 
+## 2.0.0
+
+### Major Changes
+
+- [#7](https://github.com/msalettes/nx-changeset/pull/7) [`4262725`](https://github.com/msalettes/nx-changeset/commit/4262725386351534c59f1265e7bd65012c26b5f1) Thanks [@msalettes](https://github.com/msalettes)! - test new cli
+
 ## 1.3.0
 
 ### Minor Changes
