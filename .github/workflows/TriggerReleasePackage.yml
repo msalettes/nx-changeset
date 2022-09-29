@@ -6,7 +6,7 @@ on:
       - main
       - chore-test-wfs
 
-concurrency: ${{ github.job }}-${{ github.ref }}
+concurrency: ${{ github.run_id }}-${{ github.ref }}
 
 jobs:
   # Run only if the latest commit is related to a release > release(package): new version X.XX.XX
