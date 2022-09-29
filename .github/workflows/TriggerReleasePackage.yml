@@ -32,7 +32,6 @@ jobs:
   #       run: |
   #         echo "Package name:${{ needs.GetPackageName.outputs.packageName }}!"
 
-
   # Run only if the latest commit is related to a release > release(package): new version X.XX.XX
   LaunchPackageRelease:
     name: Launch the package release
