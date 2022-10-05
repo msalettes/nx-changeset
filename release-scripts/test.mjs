@@ -17,7 +17,7 @@ async function updatePR(octokit) {
     //   ...context.repo,
     // });
 
-    console.log('PR created, ID: ', newPullRequest.number);
+    // console.log('PR created, ID: ', newPullRequest.number);
     const pr = await octokit.rest.pulls.get({
       owner: context.repo.owner,
       repo: context.repo.repo,
