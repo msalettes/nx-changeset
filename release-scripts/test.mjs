@@ -31,7 +31,7 @@ async function updatePR(octokit) {
     const response = await octokit.rest.issues.addLabels({
       owner: context.repo.owner,
       repo: context.repo.repo,
-      issue_number: newPullRequest.number,
+      issue_number: 2,
       labels,
     });
 
