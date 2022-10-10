@@ -14,37 +14,36 @@ jobs:
     name: Test
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout Rep
+        uses: actions/checkout@v3
+
       - name: Get branch name
         run: |
-            echo "GITHUB_REF: ${GITHUB_REF##*/}";
             echo "github.event.workflow_run.head_sha: ${{ github.event.workflow_run.head_sha }}";
             echo "github.event.workflow_run.head_ref: ${{ github.event.workflow_run.head_ref }}";
             echo "github.event.pull_request.head.sha: ${{ github.event.pull_request.head.sha }}";
             echo "github.ref: ${{ github.ref }}";
             echo "github.ref_name: ${{ github.ref_name }}";
-            echo "github.sha: ${{ github.sha }}";
+            echo "github.sha:\"${{ github.sha }}\"";
 
-      - name: Checkout Rep
-        uses: actions/checkout@v3
+      # - name: Get current branch name
+      #   run: git branch --show-current
 
-      - name: Get current branch name
-        run: git branch --show-current
+      # - name: Test file
+      #   id: isFileExist
+      #   run: |
+      #     echo "::set-output name=package4Exists::$(test -f './packages/package4/package.json' && echo 'true' || echo  'false')";
+      #     echo "::set-output name=package5Exists::$(test -f './packages/package5/package.json '&& echo 'true' || echo  'false')";
 
-      - name: Test file
-        id: isFileExist
-        run: |
-          echo "::set-output name=package4Exists::$(test -f './packages/package4/package.json' && echo 'true' || echo  'false')";
-          echo "::set-output name=package5Exists::$(test -f './packages/package5/package.json '&& echo 'true' || echo  'false')";
+      # - name: if package4 exists
+      #   if: ${{ steps.isFileExist.outputs.package4Exists == 'true' }}
+      #   run: |
+      #     echo "package4Exists: ${{ steps.isFileExist.outputs.package4Exists == 'true' && 'toto' }}";
 
-      - name: if package4 exists
-        if: ${{ steps.isFileExist.outputs.package4Exists == 'true' }}
-        run: |
-          echo "package4Exists: ${{ steps.isFileExist.outputs.package4Exists == 'true' && 'toto' }}";
-
-      - name: if package5 exists
-        if: ${{ steps.isFileExist.outputs.package5Exists == 'true' }}
-        run: |
-          echo "package5Exists";
+      # - name: if package5 exists
+      #   if: ${{ steps.isFileExist.outputs.package5Exists == 'true' }}
+      #   run: |
+      #     echo "package5Exists";
 
       - name: Setup NodeJS
         uses: actions/setup-node@v1
@@ -63,9 +62,15 @@ jobs:
         if: ${{ steps.yarn-cache.outputs.cache-hit != 'true' }}
         run: yarn install --frozen-lockfile
 
-      - name: Create or update release Pull Request by package which has changesets
-        id: pr-release
-        run: node release-scripts/release-pr-step.mjs
+      # - name: Create or update release Pull Request by package which has changesets
+      #   id: pr-release
+      #   run: node release-scripts/release-pr-step.mjs
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #     BASE_BRANCH: ${{ github.ref_name }}
+
+      - name: Add label to pull request
+        id: add-label-to-pr
+        run: node release-scripts/test.mjs
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BASE_BRANCH: ${{ github.ref_name }}

@@ -22,17 +22,6 @@ jobs:
         run: |
           echo "::set-output name=value::$(echo '${{ github.event.head_commit.message }}' | sed 's/release(\([^()]*\)).*/\1/')";
 
-
-  # ShowPackageName:
-  #   name: Show package name
-  #   runs-on: ubuntu-latest
-  #   needs: GetPackageName
-  #   steps:
-  #     - name: Show package name
-  #       run: |
-  #         echo "Package name:${{ needs.GetPackageName.outputs.packageName }}!"
-
-  # Run only if the latest commit is related to a release > release(package): new version X.XX.XX
   LaunchPackageRelease:
     name: Launch the package release
     needs: GetPackageName
