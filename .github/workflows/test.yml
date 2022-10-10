@@ -17,15 +17,14 @@ jobs:
       - name: Checkout Rep
         uses: actions/checkout@v3
 
-      # - name: Get branch name
-      #   run: |
-      #       echo "GITHUB_REF: ${GITHUB_REF##*/}";
-      #       echo "github.event.workflow_run.head_sha: ${{ github.event.workflow_run.head_sha }}";
-      #       echo "github.event.workflow_run.head_ref: ${{ github.event.workflow_run.head_ref }}";
-      #       echo "github.event.pull_request.head.sha: ${{ github.event.pull_request.head.sha }}";
-      #       echo "github.ref: ${{ github.ref }}";
-      #       echo "github.ref_name: ${{ github.ref_name }}";
-      #       echo "github.sha: ${{ github.sha }}";
+      - name: Get branch name
+        run: |
+            echo "github.event.workflow_run.head_sha: ${{ github.event.workflow_run.head_sha }}";
+            echo "github.event.workflow_run.head_ref: ${{ github.event.workflow_run.head_ref }}";
+            echo "github.event.pull_request.head.sha: ${{ github.event.pull_request.head.sha }}";
+            echo "github.ref: ${{ github.ref }}";
+            echo "github.ref_name: ${{ github.ref_name }}";
+            echo "github.sha:\"${{ github.sha }}\"";
 
       # - name: Get current branch name
       #   run: git branch --show-current
