@@ -35,11 +35,11 @@ jobs:
         run: |
           echo ${{ github.event.issue.number }}
 
-  # RunCheckPackage:
-  #   name: Run check pacckage workflow
-  #   needs: TriggerCheckPackageWorkflowFromComment
-  #   uses: ./.github/workflows/CheckPackage.yml
-  #   with:
-  #     packageName: ${{ needs.TriggerCheckPackageWorkflowFromComment.outputs.packageName }}
-  #     pullRequestId: ${{ needs.TriggerCheckPackageWorkflowFromComment.outputs.pullRequestId }}
-  #   secrets: inherit
+  RunCheckPackage:
+    name: Run check pacckage workflow
+    needs: TriggerCheckPackageWorkflowFromComment
+    uses: ./.github/workflows/ReleasePackage.yml
+    with:
+      packageName: ${{ needs.TriggerCheckPackageWorkflowFromComment.outputs.packageName }}
+      # pullRequestId: ${{ needs.TriggerCheckPackageWorkflowFromComment.outputs.pullRequestId }}
+    secrets: inherit
