@@ -9,6 +9,9 @@ on:
       branchName:
         required: true
         type: string
+      pullRequestId:
+        type: number
+        required: true
 
   workflow_dispatch:
     inputs:
@@ -51,8 +54,10 @@ jobs:
 
       - name: display package info
         run: |
-          echo "Branch name: ${{ github.ref_name }}"
+          echo "Current Branch: ${{ github.ref_name }}"
+          echo "Requested Branch: ${{ inputs.branchName }}"
           echo "Package name: ${{ inputs.packageName }}"
+          echo "Pull request id: ${{ inputs.pullRequestId }}"
           # echo "Package version: ${{ steps.packageVersion.outputs.value }}"
           # echo "Package major version: ${{ steps.packageInfo.outputs.packageMajorVersion }}"
 
