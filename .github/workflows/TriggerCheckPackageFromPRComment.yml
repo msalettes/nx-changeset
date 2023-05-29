@@ -40,7 +40,7 @@ jobs:
     needs: TriggerCheckPackageWorkflowFromComment
     uses: ./.github/workflows/ReleasePackage.yml
     with:
-      # ref: ${{ needs.TriggerCheckPackageWorkflowFromComment.outputs.branch }}
+      branchName: ${{ needs.TriggerCheckPackageWorkflowFromComment.outputs.branch }}
       packageName: ${{ needs.TriggerCheckPackageWorkflowFromComment.outputs.packageName }}
-      # pullRequestId: ${{ needs.TriggerCheckPackageWorkflowFromComment.outputs.pullRequestId }}
+      pullRequestId: ${{ needs.TriggerCheckPackageWorkflowFromComment.outputs.pullRequestId }}
     secrets: inherit
