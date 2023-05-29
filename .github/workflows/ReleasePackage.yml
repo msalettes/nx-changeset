@@ -10,7 +10,7 @@ on:
         required: true
         type: string
       pullRequestId:
-        type: number
+        type: string
         required: true
 
   workflow_dispatch:
@@ -41,16 +41,6 @@ jobs:
       - name: Checkout current branch
         if: ${{ !inputs.branchName }}
         uses: actions/checkout@v3
-        # - name: get package version
-      #   uses: sergeysova/jq-action@v2
-      #   id: packageVersion
-      #   with:
-      #     cmd: 'jq .version packages/${{ inputs.packageName }}/package.json -r'
-
-      # - name: get package major version
-      #   id: packageMajorVersion
-      #   run: |
-      #     echo "::set-output name=packageMajorVersion::$(echo '${{ steps.packageVersion.outputs.value }}' | sed 's/\([0-9]*\).*/\1/')";
 
       - name: display package info
         run: |
