@@ -28,6 +28,13 @@ jobs:
         run: |
           echo ${{ steps.packageName.outputs.name }}
 
+      - name: Display branch name
+        run: |
+          echo ${{ steps.get-branch.outputs.head_ref}}
+      - name: Display pull request id
+        run: |
+          echo ${{ github.event.issue.number }}
+
   # RunCheckPackage:
   #   name: Run check pacckage workflow
   #   needs: TriggerCheckPackageWorkflowFromComment
