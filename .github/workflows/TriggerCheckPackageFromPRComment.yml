@@ -1,0 +1,38 @@
+name: TriggerCheckPackageFromPRComment
+on:
+  issue_comment:
+    types: [created]
+
+jobs:
+  TriggerCheckPackageWorkflowFromComment:
+    runs-on: ubuntu-latest
+    if: github.event.issue.pull_request && startsWith(github.event.comment.body, '!check-package')
+    outputs:
+      packageName: ${{ steps.packageName.outputs.name }}
+      pullRequestId : ${{ github.event.issue.number }}
+      branch: ${{ steps.get-branch.outputs.head_ref }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Get package name
+        id: packageName
+        run: |
+          echo "name=$(echo '${{ github.event.comment.body }}' | head -n 1 | sed -e 's/.*!check-package\s\([a-z\-]*\).*/\1/')" >> $GITHUB_OUTPUT
+
+      - name: Get PR branch
+        uses: xt0rted/pull-request-comment-branch@v1
+        id: get-branch
+
+      - name: Display package name
+        run: |
+          echo ${{ steps.packageName.outputs.name }}
+
+  # RunCheckPackage:
+  #   name: Run check pacckage workflow
+  #   needs: TriggerCheckPackageWorkflowFromComment
+  #   uses: ./.github/workflows/CheckPackage.yml
+  #   with:
+  #     packageName: ${{ needs.TriggerCheckPackageWorkflowFromComment.outputs.packageName }}
+  #     pullRequestId: ${{ needs.TriggerCheckPackageWorkflowFromComment.outputs.pullRequestId }}
+  #   secrets: inherit
