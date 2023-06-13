@@ -1,0 +1,25 @@
+name: TriggerCreatePreReleasePR
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+    branches:
+      - 'changeset-release-**'
+
+concurrency:
+  group: ${{ github.run_id }}-${{ github.ref }}-trigger-create-prerelease-pr
+  cancel-in-progress: true
+
+jobs:
+  prerequisites:
+    name: Prerequisites
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v3
+
+      - name: Get CI info (affected packages and shouldRunVisualTesting)
+        id: pr-info
+        run: |
+          echo "PR head: ${{ github.event.pull_request.head.sha }}"
+          echo "PR: ${{ toJSON(github.event.pull_request) }}"
