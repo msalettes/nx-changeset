@@ -31,4 +31,3 @@ jobs:
           echo "PR URL: ${{ github.event.pull_request.html_url }}"
           echo "PR TITLE: ${{ github.event.pull_request.title }}"
           echo "PACKAGE NAME: ${{ steps.packageName.outputs.name }}"
-          # echo "PR: ${{ toJSON(github.event.pull_request) }}"
