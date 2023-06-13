@@ -22,4 +22,7 @@ jobs:
         id: pr-info
         run: |
           echo "PR head: ${{ github.event.pull_request.head.sha }}"
+          echo "PR ID: ${{ github.event.pull_request.number}}"
+          echo "PR URL: ${{ github.event.pull_request.html_url }}"
+          echo "PR TITLE: ${{ github.event.pull_request.title }}"
           echo "PR: ${{ toJSON(github.event.pull_request) }}"
