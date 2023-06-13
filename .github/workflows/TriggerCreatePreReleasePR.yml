@@ -6,8 +6,6 @@ on:
       - opened
       - reopened
       - synchronize
-    # branches:
-    #   - 'changeset-release-**'
 
 concurrency:
   group: ${{ github.run_id }}-${{ github.ref }}-trigger-create-prerelease-pr
@@ -31,8 +29,8 @@ jobs:
         id: pr-info
         run: |
           echo "PR head: ${{ github.event.pull_request.head.sha }}"
-          echo "PR head commit message: ${{ github.event.head_commit.message }}"
           echo "PR ID: ${{ github.event.pull_request.number}}"
           echo "PR URL: ${{ github.event.pull_request.html_url }}"
           echo "PR TITLE: ${{ github.event.pull_request.title }}"
           echo "PACKAGE NAME: ${{ steps.packageName.outputs.name }}"
+          echo "GITHUB CONTEXT: ${{ toJson(github) }}"
