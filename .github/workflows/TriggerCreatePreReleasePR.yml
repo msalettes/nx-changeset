@@ -7,7 +7,7 @@ on:
       - reopened
       - synchronize
     branches:
-      - 'changeset-release-*'
+      - 'changeset-release-**'
 
 concurrency:
   group: ${{ github.run_id }}-${{ github.ref }}-trigger-create-prerelease-pr
