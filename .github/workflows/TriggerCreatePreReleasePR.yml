@@ -6,8 +6,8 @@ on:
       - opened
       - reopened
       - synchronize
-    branches:
-      - 'changeset-release-**'
+    # branches:
+    #   - 'changeset-release-**'
 
 concurrency:
   group: ${{ github.run_id }}-${{ github.ref }}-trigger-create-prerelease-pr
@@ -16,6 +16,7 @@ concurrency:
 jobs:
   prerequisites:
     name: Prerequisites
+    if:  startsWith(github.head_ref, 'changeset-release-')
     runs-on: ubuntu-latest
     steps:
       - name: Checkout branch
