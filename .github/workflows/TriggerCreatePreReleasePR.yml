@@ -18,6 +18,11 @@ jobs:
       - name: Checkout branch
         uses: actions/checkout@v3
 
+      - name: get package name
+        id: packageName
+        run: |
+          echo "name=$(echo '${{ github.event.pull_request.title }}' | head -n 1 | sed -e 's/release(\([^()]*\)).*/\1/')" >> $GITHUB_OUTPUT
+
       - name: Get CI info (affected packages and shouldRunVisualTesting)
         id: pr-info
         run: |
@@ -25,4 +30,5 @@ jobs:
           echo "PR ID: ${{ github.event.pull_request.number}}"
           echo "PR URL: ${{ github.event.pull_request.html_url }}"
           echo "PR TITLE: ${{ github.event.pull_request.title }}"
-          echo "PR: ${{ toJSON(github.event.pull_request) }}"
+          echo "PACKAGE NAME: ${{ steps.packageName.outputs.name }}"
+          # echo "PR: ${{ toJSON(github.event.pull_request) }}"
