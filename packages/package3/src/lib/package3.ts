@@ -3,5 +3,6 @@ import { package2 } from "@changeset/package2";
 
 export function package3(): string {
   console.log('package3');
+  console.info('package3');
   return package2() + '-package3' + '-' + package1();
 }
