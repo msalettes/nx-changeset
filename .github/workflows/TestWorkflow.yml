@@ -27,9 +27,11 @@ jobs:
         id: packageInfo
         run: |
           commitFirstLine=$(echo '${{ github.event.head_commit.message }}' | head -n 1)
-          echo "$commitFirstLine"
-          echo "name=$(echo '${{ github.event.head_commit.message }}' | head -n 1 | sed -e 's/release(\([^()]*\)).*/\1/')" >> $GITHUB_OUTPUT
-          echo "version=$(echo '${{ github.event.head_commit.message }}' | head -n 1 | sed -e 's/.* \([0-9]\+.[0-9]\+.[0-9]\+\).*/\1/')" >> $GITHUB_OUTPUT
+          packageName=$(echo "$commitFirstLine" | sed -e 's/release(\([^()]*\)).*/\1/')
+          echo "$packageName"
+          echo "packageName=$packageName" >> $GITHUB_OUTPUT
+          # echo "name=$(echo '${{ github.event.head_commit.message }}' | head -n 1 | sed -e 's/release(\([^()]*\)).*/\1/')" >> $GITHUB_OUTPUT
+          # echo "version=$(echo '${{ github.event.head_commit.message }}' | head -n 1 | sed -e 's/.* \([0-9]\+.[0-9]\+.[0-9]\+\).*/\1/')" >> $GITHUB_OUTPUT
 
       - name: show package info
         run: |
