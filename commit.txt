@@ -9,3 +9,15 @@ another workflow
 will publish the concerning package to npm automatically.
 If you're not ready to do a release yet, that's fine, whenever you add
 more changesets to **main** branch, this PR will be updated.
+
+
+This PR was opened by the
+
+[CreateReleasePR](/mirakl/front-core/blob/main/.github/workflows/CreateReleasePR.yml)
+workflow. When you are ready to do a release you can merge this and
+another workflow
+
+[ReleasePackage](/mirakl/front-core/blob/main/.github/workflows/ReleasePackage.yml)
+will publish the concerning package to npm automatically.
+If you are not ready to do a release yet, that is fine, whenever you add
+more changesets to **main** branch, this PR will be updated.
