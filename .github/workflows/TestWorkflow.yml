@@ -26,8 +26,8 @@ jobs:
       - name: get package info
         id: packageInfo
         run: |
-          echo "name=$(printf '${{ github.event.head_commit.message }}' | head -n 1 | sed -e 's/release(\([^()]*\)).*/\1/')" >> $GITHUB_OUTPUT
-          echo "version=$(printf '${{ github.event.head_commit.message }}' | head -n 1 | sed -e 's/.* \([0-9]\+.[0-9]\+.[0-9]\+\).*/\1/')" >> $GITHUB_OUTPUT
+          echo "name=$(echo '${{ github.event.head_commit.message }}\n' | head -n 1 | sed -e 's/release(\([^()]*\)).*/\1/')" >> $GITHUB_OUTPUT
+          echo "version=$(echo '${{ github.event.head_commit.message }}\n' | head -n 1 | sed -e 's/.* \([0-9]\+.[0-9]\+.[0-9]\+\).*/\1/')" >> $GITHUB_OUTPUT
 
       - name: show package info
         run: |
