@@ -27,9 +27,10 @@ jobs:
         id: packageInfo
         run: |
           # use printf to handle correclty single quotes in commit message
-          printf -v commitMessage "${{ github.event.head_commit.message }}"
-          echo "name=$(echo $commitMessage | head -n 1 | sed -e 's/release(\([^()]*\)).*/\1/')" >> $GITHUB_OUTPUT
-          echo "version=$(echo $commitMessage | head -n 1 | sed -e 's/.* \([0-9]\+.[0-9]\+.[0-9]\+\).*/\1/')" >> $GITHUB_OUTPUT
+          # printf -v commitMessage "${{ github.event.head_commit.message }}"
+          commitTitle=$(printf "${{ github.event.head_commit.message }}" | head -n 1)
+          echo "name=$(echo $commitTitle | sed -e 's/release(\([^()]*\)).*/\1/')" >> $GITHUB_OUTPUT
+          echo "version=$(echo $commitTitle | sed -e 's/.* \([0-9]\+.[0-9]\+.[0-9]\+\).*/\1/')" >> $GITHUB_OUTPUT
 
       - name: show package info
         run: |
